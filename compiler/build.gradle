@@ -210,7 +210,7 @@ test {
     systemProperty("dukat.test.resources.topN", TOPN_TARGET_DIR)
 
     System.properties.each { key, value ->
-         if (key.starsWith("junit.")) {
+         if (key.startsWith("junit.")) {
             systemProperty(key, value)
          }
     }
