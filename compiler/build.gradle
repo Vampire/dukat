@@ -211,6 +211,7 @@ test {
 
     def systemPropPrefix = "system."
     project.properties.forEach { key, value ->
+        println("PROP ${key} => ${value}")
         if (key.startsWith(systemPropPrefix)) {
             systemProperty(key - systemPropPrefix, value)
          }
