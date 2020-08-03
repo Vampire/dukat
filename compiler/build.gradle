@@ -209,6 +209,12 @@ test {
     systemProperty("dukat.test.resources.definitelyTyped", DEF_TYPE_DIR)
     systemProperty("dukat.test.resources.topN", TOPN_TARGET_DIR)
 
+    System.properties.each { key, value ->
+         if (key.starsWith("junit.")) {
+            systemProperty(key, value)
+         }
+    }
+
     /*
         execute top-level classes in sequentially but their methods in parallel
         see https://junit.org/junit5/docs/5.5.1/user-guide/index.html#writing-tests-parallel-execution
